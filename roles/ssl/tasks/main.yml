@@ -1,7 +1,7 @@
 ---
 - name: Copy SSL certificates
   copy:
-    content: "{{ item }}"
+    src: "{{ item }}"
     dest: "/etc/ssl/certs/{{ item }}"
     owner: root
     group: root
@@ -11,7 +11,7 @@
 
 - name: Copy SSL keys
   copy:
-    content: "{{ item }}"
+    src: "{{ item }}"
     dest: "/etc/ssl/private/{{ item }}"
     owner: root
     group: root
