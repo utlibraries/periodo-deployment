@@ -14,8 +14,22 @@
   - import_tasks: ../shared/pre-tasks.yml
 
   tasks:
-
   - import_tasks: ../shared/system-tasks.yml
+
+  - name: Create deploy group
+    group:
+      name: deploy
+      state: present
+
+  - name: Create sudo group
+    group:
+      name: sudo
+      state: present
+
+  - name: Create www-data group
+    group:
+      name: www-data
+      state: present
 
   - name: Create directory for app
     file:
