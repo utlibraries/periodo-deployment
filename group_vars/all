@@ -1,0 +1,33 @@
+---
+# apt packages
+system_packages:
+  - git
+  - make
+  - python3.5
+  - python3.5-venv
+  - nginx
+  - uwsgi
+  - uwsgi-plugin-python3
+  - sqlite3
+  - npm
+  - highlight
+
+# the git repository URL
+project_repo: https://github.com/periodo/periodo-server.git
+
+# the root path to install to
+install_root: "/srv/{{ server_name }}"
+
+# the root path for www-visible documents
+www_root: "/var/www/{{ server_name }}"
+
+# the path to the sqlite db file
+db_path: "{{ www_root }}/db.sqlite"
+
+# key size to use when generating keys
+rsa_key_size: 4096
+
+# where to put HTTPS keys and certs
+https_chain: "/etc/ssl/certs/lib.utexas.edu.pem"
+https_key: "/etc/ssl/private/lib.utexas.edu.key"
+https_dhparams: "/etc/ssl/dhparams.pem"
